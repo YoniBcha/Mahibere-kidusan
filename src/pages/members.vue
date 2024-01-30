@@ -11,12 +11,32 @@
         v-model="search"
         @input="filterItems"
       />
+
       <button
-        class="flex items-center mr-5 ml-auto px-4 py-2 bg-blue-500 text-white font-bold rounded-md"
-        @click="addName"
+        class="flex items-center fixed right-0 mr-5 px-4 py-1 bg-blue-500 text-white font-bold rounded-md"
+        @click="toggleForm"
       >
-        Add Name
+        {{ showForm ? "Close" : "Add new member" }}
       </button>
+      <!-- <div class=""> -->
+        <!-- form -->
+        <div
+          :class="{ show: showForm }"
+          id="myForm"
+          class="bg-gray-100 border border-black"
+        >
+          <form>
+            <!-- Your form content goes here -->
+          </form>
+          <button
+            class="relative left-0 m-2 bg-white px-3 py-1 rounded-sm text-gray-500 hover:text-gray-700 text-xl"
+            @click="toggleForm"
+          >
+            X
+          </button>
+          <p>jdhfkajsdfh</p>
+        </div>
+      <!-- </div> -->
     </div>
     <div class="mt-32 ml-6">
       <v-data-table
@@ -34,6 +54,7 @@ export default {
   name: "MembersPage",
   data() {
     return {
+      showForm: false,
       selected: [],
       search: "",
       items: [
@@ -193,6 +214,9 @@ export default {
     },
   },
   methods: {
+    toggleForm() {
+      this.showForm = !this.showForm;
+    },
     addName() {
       const newName = prompt("Enter a name");
       if (newName) {
@@ -205,3 +229,18 @@ export default {
   },
 };
 </script>
+<style scoped>
+#myForm {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  transition: transform 0.5s;
+  transform: translateX(100%);
+}
+
+#myForm.show {
+  transform: translateX(0%);
+}
+</style>
