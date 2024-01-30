@@ -19,23 +19,184 @@
         {{ showForm ? "Close" : "Add new member" }}
       </button>
       <!-- <div class=""> -->
-        <!-- form -->
-        <div
-          :class="{ show: showForm }"
-          id="myForm"
-          class="bg-gray-100 border border-black"
-        >
-          <form>
-            <!-- Your form content goes here -->
-          </form>
+      <!-- form -->
+      <div
+        :class="{ show: showForm }"
+        id="myForm"
+        class="bg-gray-50 border border-black"
+      >
+        <form>
           <button
-            class="relative left-0 m-2 bg-white px-3 py-1 rounded-sm text-gray-500 hover:text-gray-700 text-xl"
+            class="left-0 m-2 bg-white px-3 py-1 rounded-sm text-gray-500 hover:text-gray-700 text-xl border border-black"
             @click="toggleForm"
           >
             X
           </button>
-          <p>jdhfkajsdfh</p>
-        </div>
+          <span class="ml-2 font-bold text-xl">Add New Member</span>
+          <div class="m-4">
+            <div v-if="previewImage" class="flex h-36 mb-4">
+              <div>
+                <img
+                  :src="previewImage"
+                  alt="Preview"
+                  class="w-36 h-36 object-cover"
+                />
+              </div>
+              <div class="ml-5">
+                <div class="text-2xl">John Doe</div>
+                <div class="text-sm">Welde Mikael</div>
+                <button
+                  class="text-end mt-12 bg-yellow-500 px-3 py-1 rounded-sm text-white font-bold"
+                >
+                  Medium
+                </button>
+              </div>
+            </div>
+            <input
+              type="file"
+              accept="image/*"
+              @change="handleImageUpload"
+              class="mb-4"
+            />
+            <div class="flex justify-between">
+              <div>
+                <label for="first name" class="m-1">firstname:</label
+                ><input
+                  type="text"
+                  placeholder="first name"
+                  class="outline-none py-1 border border-solod border-blue-500 rounded-sm px-2 w-44"
+                />
+              </div>
+              <div>
+                <label for="father name">father name:</label
+                ><input
+                  type="text"
+                  placeholder="father name"
+                  class="outline-none py-1 border border-solod border-blue-500 rounded-sm px-2 w-44"
+                />
+              </div>
+              <div>
+                <label for="grand father name">grand father name:</label
+                ><input
+                  type="text"
+                  placeholder="grand father name"
+                  class="outline-none py-1 border border-solod border-blue-500 rounded-sm px-2 w-44"
+                />
+              </div>
+            </div>
+            <div class="w-full mt-8">
+              <div>
+                <div class="">
+                  <label for="grand father name">Name of Christianity:</label>
+                </div>
+                <input
+                  type="text"
+                  placeholder="name"
+                  class="outline-none py-1 border border-solod border-blue-500 rounded-sm px-2 w-44"
+                />
+              </div>
+            </div>
+            <div class="flex w-full mt-8">
+              <div>
+                <div class="">
+                  <label for="grand father name">Gender:</label>
+                </div>
+                <input
+                  type="text"
+                  placeholder="gender"
+                  class="outline-none py-1 border border-solod border-blue-500 rounded-sm px-2 w-44"
+                />
+              </div>
+              <div class="ml-5">
+                <div class="">
+                  <label for="grand father name">Age:</label>
+                </div>
+                <input
+                  type="number"
+                  placeholder="age"
+                  class="outline-none py-1 border border-solod border-blue-500 rounded-sm px-2 w-44"
+                />
+              </div>
+            </div>
+            <div class="flex justify-between mt-8">
+              <div>
+                <label for="first name" class="m-1">Zone:</label
+                ><input
+                  type="text"
+                  placeholder="zone"
+                  class="outline-none py-1 border border-solod border-blue-500 rounded-sm px-2 w-44"
+                />
+              </div>
+              <div>
+                <label for="father name">Wereda:</label
+                ><input
+                  type="text"
+                  placeholder="wereda"
+                  class="outline-none py-1 border border-solod border-blue-500 rounded-sm px-2 w-44"
+                />
+              </div>
+              <div>
+                <label for="grand father name">Kebele:</label
+                ><input
+                  type="text"
+                  placeholder="kebele"
+                  class="outline-none py-1 border border-solod border-blue-500 rounded-sm px-2 w-44"
+                />
+              </div>
+            </div>
+            <div class="w-full mt-8">
+              <div>
+                <div class="">
+                  <label for="grand father name">Workplace Place Name:</label>
+                </div>
+                <input
+                  type="text"
+                  placeholder="workplace name"
+                  class="outline-none py-1 border border-solod border-blue-500 rounded-sm px-2 w-44"
+                />
+              </div>
+            </div>
+            <div class="flex mt-8">
+              <div>
+                <div class="">
+                  <label for="first name" class="m-1">Email:</label>
+                </div>
+                <input
+                  type="email"
+                  placeholder="email"
+                  class="outline-none py-1 border border-solod border-blue-500 rounded-sm px-2 w-44"
+                />
+              </div>
+              <div class="ml-8">
+                <div class="">
+                  <label for="father name">Phone number:</label>
+                </div>
+                <input
+                  type="tel"
+                  placeholder="phone"
+                  class="outline-none py-1 border border-solod border-blue-500 rounded-sm px-2 w-44"
+                />
+              </div>
+            </div>
+            <div class="flex w-full justify-end mt-8">
+              <div class="">
+                <button
+                  class="px-5 py-1 border rounded-md hover:bg-blue-500 hover:text-white font-bold"
+                >
+                  cancel
+                </button>
+              </div>
+              <div class="ml-3">
+                <button
+                  class="px-5 py-1 border rounded-md hover:bg-blue-500 hover:text-white font-bold"
+                >
+                  save
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
       <!-- </div> -->
     </div>
     <div class="mt-32 ml-6">
@@ -55,79 +216,10 @@ export default {
   data() {
     return {
       showForm: false,
+      previewImage: null,
       selected: [],
       search: "",
       items: [
-        {
-          name: "🍎 Apple",
-          location: "Washington",
-          height: "0.1",
-          base: "0.07",
-          volume: "0.0001",
-        },
-        {
-          name: "🍌 Banana",
-          location: "Ecuador",
-          height: "0.2",
-          base: "0.05",
-          volume: "0.0002",
-        },
-        {
-          name: "🍇 Grapes",
-          location: "Italy",
-          height: "0.02",
-          base: "0.02",
-          volume: "0.00001",
-        },
-        {
-          name: "🍉 Watermelon",
-          location: "China",
-          height: "0.4",
-          base: "0.3",
-          volume: "0.03",
-        },
-        {
-          name: "🍍 Pineapple",
-          location: "Thailand",
-          height: "0.3",
-          base: "0.2",
-          volume: "0.005",
-        },
-        {
-          name: "🍒 Cherries",
-          location: "Turkey",
-          height: "0.02",
-          base: "0.02",
-          volume: "0.00001",
-        },
-        {
-          name: "🥭 Mango",
-          location: "India",
-          height: "0.15",
-          base: "0.1",
-          volume: "0.0005",
-        },
-        {
-          name: "🍓 Strawberry",
-          location: "USA",
-          height: "0.03",
-          base: "0.03",
-          volume: "0.00002",
-        },
-        {
-          name: "🍑 Peach",
-          location: "China",
-          height: "0.09",
-          base: "0.08",
-          volume: "0.0004",
-        },
-        {
-          name: "🥝 Kiwi",
-          location: "New Zealand",
-          height: "0.05",
-          base: "0.05",
-          volume: "0.0001",
-        },
         {
           name: "🍎 Apple",
           location: "Washington",
@@ -226,6 +318,12 @@ export default {
     filterItems() {
       this.selected = [];
     },
+    handleImageUpload(event) {
+      const file = event.target.files[0];
+      if (file) {
+        this.previewImage = URL.createObjectURL(file);
+      }
+    },
   },
 };
 </script>
@@ -238,8 +336,8 @@ export default {
   height: 100%;
   transition: transform 0.5s;
   transform: translateX(100%);
+  overflow-y: scroll; /* Add this line */
 }
-
 #myForm.show {
   transform: translateX(0%);
 }
