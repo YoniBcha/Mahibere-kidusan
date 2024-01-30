@@ -25,7 +25,7 @@
         id="myForm"
         class="bg-gray-50 border border-black"
       >
-        <form>
+        <form action="#">
           <button
             class="left-0 m-2 bg-white px-3 py-1 rounded-sm text-gray-500 hover:text-gray-700 text-xl border border-black"
             @click="toggleForm"
