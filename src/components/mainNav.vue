@@ -1,6 +1,6 @@
 <template>
   <header class="w-full">
-    <div class="fixed top-0 left-0 w-full h-16">
+    <div class="fixed top-0 left-0 w-full h-16 z-10 bg-gray-100">
       <div class="flex flex-nowrap mx-auto h-full border-b border-solid px-8">
         <div class="flex items-center h-full">
           <img src="@/assets/logo.svg" alt="" srcset="" />
