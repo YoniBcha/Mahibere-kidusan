@@ -25,7 +25,7 @@
         id="myForm"
         class="bg-gray-50 border border-black"
       >
-        <form action="#">
+        <form @submit="handleSubmit">
           <button
             class="left-0 m-2 bg-white px-3 py-1 rounded-sm text-gray-500 hover:text-gray-700 text-xl border border-black"
             @click="toggleForm"
@@ -181,6 +181,7 @@
             <div class="flex w-full justify-end mt-8">
               <div class="">
                 <button
+                  type="reset"
                   class="px-5 py-1 border rounded-md hover:bg-blue-500 hover:text-white font-bold"
                 >
                   cancel
@@ -188,6 +189,7 @@
               </div>
               <div class="ml-3">
                 <button
+                  type="submit"
                   class="px-5 py-1 border rounded-md hover:bg-blue-500 hover:text-white font-bold"
                 >
                   save
@@ -323,6 +325,9 @@ export default {
       if (file) {
         this.previewImage = URL.createObjectURL(file);
       }
+    },
+    handleSubmit(event) {
+      event.preventDefault();
     },
   },
 };
