@@ -33,7 +33,7 @@
             X
           </button>
           <span class="ml-2 font-bold text-xl">Add New Member</span>
-          <div class="m-2">
+          <div class="ml-5">
             <div v-if="previewImage" class="flex h-36 mb-4">
               <div>
                 <img
