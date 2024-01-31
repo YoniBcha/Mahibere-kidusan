@@ -33,7 +33,7 @@
             X
           </button>
           <span class="ml-2 font-bold text-xl">Add New Member</span>
-          <div class="m-4">
+          <div class="m-2">
             <div v-if="previewImage" class="flex h-36 mb-4">
               <div>
                 <img
@@ -58,29 +58,29 @@
               @change="handleImageUpload"
               class="mb-4"
             />
-            <div class="flex justify-between">
-              <div>
-                <label for="first name" class="m-1">firstname:</label
-                ><input
+            <div class="grid grid-cols-3">
+              <div class="">
+                <div class="">firstname:</div>
+                <input
                   type="text"
                   placeholder="first name"
-                  class="outline-none py-1 border border-solod border-blue-500 rounded-sm px-2 w-44"
+                  class="outline-none py-1 border border-solod border-blue-500 rounded-sm px-2 xl:w-52 2xl:w-72"
                 />
               </div>
-              <div>
-                <label for="father name">father name:</label
-                ><input
+              <div class="">
+                <div>father name:</div>
+                <input
                   type="text"
                   placeholder="father name"
-                  class="outline-none py-1 border border-solod border-blue-500 rounded-sm px-2 w-44"
+                  class="outline-none py-1 border border-solod border-blue-500 rounded-sm px-2 xl:w-52 2xl:w-72"
                 />
               </div>
               <div>
-                <label for="grand father name">grand father name:</label
-                ><input
+                <div class="">grand father name:</div>
+                <input
                   type="text"
                   placeholder="grand father name"
-                  class="outline-none py-1 border border-solod border-blue-500 rounded-sm px-2 w-44"
+                  class="outline-none py-1 border border-solod border-blue-500 rounded-sm px-2 xl:w-52 2xl:w-72"
                 />
               </div>
             </div>
@@ -92,19 +92,17 @@
                 <input
                   type="text"
                   placeholder="name"
-                  class="outline-none py-1 border border-solod border-blue-500 rounded-sm px-2 w-44"
+                  class="outline-none py-1 border border-solod border-blue-500 rounded-sm px-2 xl:w-52 2xl:w-72"
                 />
               </div>
             </div>
             <div class="flex w-full mt-8">
               <div>
-                <div class="">
-                  <label for="grand father name">Gender:</label>
-                </div>
+                <div class="">Gender:</div>
                 <input
                   type="text"
                   placeholder="gender"
-                  class="outline-none py-1 border border-solod border-blue-500 rounded-sm px-2 w-44"
+                  class="outline-none py-1 border border-solod border-blue-500 rounded-sm px-2 xl:w-52 2xl:w-72"
                 />
               </div>
               <div class="ml-5">
@@ -114,33 +112,33 @@
                 <input
                   type="number"
                   placeholder="age"
-                  class="outline-none py-1 border border-solod border-blue-500 rounded-sm px-2 w-44"
+                  class="outline-none py-1 border border-solod border-blue-500 rounded-sm px-2 w-60"
                 />
               </div>
             </div>
-            <div class="flex justify-between mt-8">
-              <div>
-                <label for="first name" class="m-1">Zone:</label
-                ><input
+            <div class="grid grid-cols-3 mt-8">
+              <div class="">
+                <div class="">Zone:</div>
+                <input
                   type="text"
                   placeholder="zone"
-                  class="outline-none py-1 border border-solod border-blue-500 rounded-sm px-2 w-44"
+                  class="outline-none py-1 border border-solod border-blue-500 rounded-sm px-2 xl:w-52 2xl:w-72"
                 />
               </div>
-              <div>
-                <label for="father name">Wereda:</label
-                ><input
+              <div class="">
+                <div>Wereda:</div>
+                <input
                   type="text"
                   placeholder="wereda"
-                  class="outline-none py-1 border border-solod border-blue-500 rounded-sm px-2 w-44"
+                  class="outline-none py-1 border border-solod border-blue-500 rounded-sm px-2 xl:w-52 2xl:w-72"
                 />
               </div>
               <div>
-                <label for="grand father name">Kebele:</label
-                ><input
-                  type="text"
-                  placeholder="kebele"
-                  class="outline-none py-1 border border-solod border-blue-500 rounded-sm px-2 w-44"
+                <div class="">Keble:</div>
+                <input
+                  type="number"
+                  placeholder="keble"
+                  class="outline-none py-1 border border-solod border-blue-500 rounded-sm px-2 xl:w-52 2xl:w-72"
                 />
               </div>
             </div>
@@ -152,7 +150,7 @@
                 <input
                   type="text"
                   placeholder="workplace name"
-                  class="outline-none py-1 border border-solod border-blue-500 rounded-sm px-2 w-44"
+                  class="outline-none py-1 border border-solod border-blue-500 rounded-sm px-2 w-60"
                 />
               </div>
             </div>
@@ -164,7 +162,7 @@
                 <input
                   type="email"
                   placeholder="email"
-                  class="outline-none py-1 border border-solod border-blue-500 rounded-sm px-2 w-44"
+                  class="outline-none py-1 border border-solod border-blue-500 rounded-sm px-2 w-60"
                 />
               </div>
               <div class="ml-8">
@@ -174,7 +172,7 @@
                 <input
                   type="tel"
                   placeholder="phone"
-                  class="outline-none py-1 border border-solod border-blue-500 rounded-sm px-2 w-44"
+                  class="outline-none py-1 border border-solod border-blue-500 rounded-sm px-2 w-60"
                 />
               </div>
             </div>
