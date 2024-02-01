@@ -27,7 +27,7 @@
       >
         <form @submit="handleSubmit">
           <button
-            class="left-0 m-2 bg-white px-3 py-1 rounded-sm text-gray-500 hover:text-gray-700 text-xl border border-black"
+            class="left-0 m-2 px-3 py-1 rounded-sm hover:bg-blue-500 hover:text-white font-bold text-xl border border-black mb-10"
             @click="toggleForm"
           >
             X
@@ -176,7 +176,7 @@
                 />
               </div>
             </div>
-            <div class="flex w-full justify-end mt-8">
+            <div class="flex w-full justify-end mt-8 mb-5 pr-10">
               <div class="">
                 <button
                   type="reset"
@@ -188,7 +188,7 @@
               <div class="ml-3">
                 <button
                   type="submit"
-                  class="px-5 py-1 border rounded-md hover:bg-blue-500 hover:text-white font-bold"
+                  class="px-5 py-1 border rounded-md bg-blue-400 hover:bg-blue-600 text-white font-bold"
                 >
                   save
                 </button>
@@ -335,7 +335,7 @@ export default {
   position: fixed;
   top: 0;
   right: 0;
-  width: 700px;
+  width: 800px;
   height: 100%;
   transition: transform 0.5s;
   transform: translateX(100%);
