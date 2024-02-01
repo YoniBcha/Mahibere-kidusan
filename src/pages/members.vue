@@ -335,7 +335,7 @@ export default {
   position: fixed;
   top: 0;
   right: 0;
-  width: 50%;
+  width: 700px;
   height: 100%;
   transition: transform 0.5s;
   transform: translateX(100%);
