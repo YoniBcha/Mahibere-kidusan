@@ -10,7 +10,7 @@
         </button>
         <span class="ml-10 font-bold text-xl">Add New Member</span>
       </div>
-      <div v-if="previewImage" class="flex h-36 mb-4">
+      <div v-if="previewImage" class="flex h-36 mb-10">
         <div>
           <img
             :src="previewImage"
@@ -33,7 +33,7 @@
         type="file"
         accept="image/*"
         @change="handleImageUpload"
-        class="mb-4"
+        class="mb-10"
       />
       <v-row>
         <v-col cols="12" sm="4">
