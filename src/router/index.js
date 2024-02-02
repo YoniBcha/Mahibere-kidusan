@@ -4,11 +4,11 @@
  * Automatic routes for `./src/pages/*.vue`
  */
 // Composables
-import classPage from '../pages/class.vue'
-import dashboard from '../pages/dashboard.vue'
-import members from '../pages/members.vue'
-import monthlyPayment from '../pages/monthlyPayment.vue'
-import woreda from '../pages/woreda.vue'
+import classPage from '../components/class.vue'
+import dashboard from '../components/dashboard.vue'
+import members from '../components/members.vue'
+import monthlyPayment from '../components/monthlyPayment.vue'
+import woreda from '../components/woreda.vue'
 
 import { createRouter, createWebHistory } from 'vue-router/auto'
 

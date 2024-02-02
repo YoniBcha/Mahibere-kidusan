@@ -9,3 +9,4 @@ export default {
   components: { MainNav },
 };
 </script>
+
