@@ -54,12 +54,12 @@
         </div>
       </div>
     </div>
-    <div class="grid grid-cols-2 gap-3 mr-3 mt-20">
+    <div class="grid gap-3 sm:grid-cols-1 xl:grid-cols-2 mr-3 mt-20">
       <div class="">
         <linegraph />
       </div>
       <div>
-        <pichart />
+        <pichart class="mr-10" />
       </div>
     </div>
   </div>
@@ -78,12 +78,19 @@ export default {
   data() {
     return {
       chartOptions: {
+        tooltip: {
+          enabled: true,
+        },
         chart: {
           id: "line-chart",
           toolbar: {
             show: false,
           },
         },
+        stroke: {
+          curve: "smooth",
+        },
+
         xaxis: {
           labels: {
             show: false,
@@ -106,7 +113,7 @@ export default {
       },
       seriesData: [
         {
-          name: "Series 1",
+          name: "serios 1",
           data: [5, 10, 30, 40, 25, 40],
         },
       ],
