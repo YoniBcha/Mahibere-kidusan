@@ -1,3 +1,44 @@
+<script>
+import AddMemberForm from "@/components/addMemberForm.vue";
+
+export default {
+  name: "MembersPage",
+  components: { AddMemberForm },
+  data() {
+    return {
+      previewImage: null,
+      showForm: false,
+      selected: [],
+      search: "",
+      items: [],
+    };
+  },
+  computed: {
+    filteredItems() {
+      if (this.search) {
+        const searchQuery = this.search.toLowerCase();
+        return this.items.filter((item) =>
+          item.firstname.toLowerCase().includes(searchQuery)
+        );
+      } else {
+        return this.items;
+      }
+    },
+  },
+  methods: {
+    handleFormData(formData) {
+      this.items.push(formData); // Add the form data to the items array
+    },
+    toggleForm() {
+      this.showForm = !this.showForm;
+    },
+    filterItems() {
+      this.selected = [];
+    },
+  },
+};
+</script>
+
 <template>
   <div>
     <MainNav />
@@ -39,46 +80,6 @@
   </div>
 </template>
 
-<script>
-import AddMemberForm from "@/components/addMemberForm.vue";
-
-export default {
-  name: "MembersPage",
-  components: { AddMemberForm },
-  data() {
-    return {
-      previewImage: null,
-      showForm: false,
-      selected: [],
-      search: "",
-      items: [],
-    };
-  },
-  computed: {
-    filteredItems() {
-      if (this.search) {
-        const searchQuery = this.search.toLowerCase();
-        return this.items.filter((item) =>
-          item.firstname.toLowerCase().includes(searchQuery)
-        );
-      } else {
-        return this.items;
-      }
-    },
-  },
-  methods: {
-    handleFormData(formData) {
-      this.items.push(formData); // Add the form data to the items array
-    },
-    toggleForm() {
-      this.showForm = !this.showForm;
-    },
-    filterItems() {
-      this.selected = [];
-    },
-  },
-};
-</script>
 <style scoped>
 #myForm {
   position: fixed;
