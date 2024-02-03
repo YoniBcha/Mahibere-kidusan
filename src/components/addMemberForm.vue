@@ -35,50 +35,79 @@
         @change="handleImageUpload"
         class="mb-10"
       />
+
       <v-row>
         <v-col cols="12" sm="4">
-          <v-text-field label="Firstname" variant="outlined"></v-text-field>
-        </v-col>
-        <v-col cols="12" sm="4">
-          <v-text-field label="Lastname" variant="outlined"></v-text-field>
+          <v-text-field
+            v-model="firstname"
+            label="Firstname"
+            variant="outlined"
+          ></v-text-field>
         </v-col>
         <v-col cols="12" sm="4">
           <v-text-field
+            v-model="lastname"
+            label="Lastname"
+            variant="outlined"
+          ></v-text-field>
+        </v-col>
+        <v-col cols="12" sm="4">
+          <v-text-field
+            v-model="grandfathername"
             label="Grandfather name"
             variant="outlined"
           ></v-text-field>
         </v-col>
       </v-row>
       <v-row>
-        <v-col cols="12" sm="6">
+        <v-col cols="12" sm="8">
           <v-text-field
+            v-model="chrisitianityname"
             label="Name of Christianity"
             variant="outlined"
           ></v-text-field>
         </v-col>
       </v-row>
       <v-row>
-        <v-col cols="12" sm="3">
-          <v-text-field label="Gender" variant="outlined"> </v-text-field>
+        <v-col cols="12" sm="2">
+          <v-text-field v-model="gender" label="Gender" variant="outlined">
+          </v-text-field>
         </v-col>
         <v-col cols="12" sm="2">
-          <v-text-field label="Age" variant="outlined"></v-text-field>
+          <v-text-field
+            v-model="age"
+            label="Age"
+            variant="outlined"
+          ></v-text-field>
         </v-col>
       </v-row>
       <v-row>
         <v-col cols="12" sm="4">
-          <v-text-field label="Zone" variant="outlined"></v-text-field>
+          <v-text-field
+            v-model="zone"
+            label="Zone"
+            variant="outlined"
+          ></v-text-field>
         </v-col>
         <v-col cols="12" sm="4">
-          <v-text-field label="Woreda" variant="outlined"></v-text-field>
+          <v-text-field
+            v-model="woreda"
+            label="Woreda"
+            variant="outlined"
+          ></v-text-field>
         </v-col>
         <v-col cols="12" sm="4">
-          <v-text-field label="Kebele" variant="outlined"></v-text-field>
+          <v-text-field
+            v-model="kebele"
+            label="Kebele"
+            variant="outlined"
+          ></v-text-field>
         </v-col>
       </v-row>
       <v-row>
         <v-col cols="12" sm="6">
           <v-text-field
+            v-model="workplacename"
             label="Name of workplace"
             variant="outlined"
           ></v-text-field>
@@ -86,10 +115,15 @@
       </v-row>
       <v-row>
         <v-col cols="12" sm="6">
-          <v-text-field label="Phone number" variant="outlined"></v-text-field>
+          <v-text-field
+            v-model="phonenumber"
+            label="Phone number"
+            variant="outlined"
+          ></v-text-field>
         </v-col>
         <v-col cols="12" sm="6">
           <v-text-field
+            v-model="emial"
             label="Enter your mail address"
             variant="outlined"
           ></v-text-field>
@@ -123,14 +157,47 @@
 export default {
   name: "AddMemberForm",
   data() {
-    return { previewImage: null };
+    return {
+      firstname: "",
+      lastname: "",
+      grandfathername: "",
+      chrisitianityname: "",
+      gender: "",
+      age: "",
+      zone: "",
+      woreda: "",
+      kebele: "",
+      workplacename: "",
+      phonenumber: "",
+      email: "",
+      previewImage: null,
+    };
   },
   methods: {
+    sendData() {
+      const formData = {
+        firstname: this.firstname,
+        lastname: this.lastname,
+        grandfathername: this.grandfathername,
+        chrisitianityname: this.chrisitianityname,
+        gender: this.gender,
+        age: this.age,
+        zone: this.zone,
+        woreda: this.woreda,
+        kebele: this.kebele,
+        workplacename: this.workplacename,
+        phonenumber: this.phonenumber,
+        email: this.email,
+      };
+      this.$emit("form-data", formData); // Emit the "form-data" event with the form values as the payload
+      this.toggleForm(); // Call the "toggleForm" method to close the form
+    },
     toggleForm() {
       this.$emit("toggle-form");
     },
     handleSubmit(event) {
       event.preventDefault();
+      this.sendData(); // Call the "sendData" method to emit the event and close the form
     },
     handleImageUpload(event) {
       const file = event.target.files[0];

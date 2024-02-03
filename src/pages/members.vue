@@ -2,15 +2,17 @@
   <div>
     <MainNav />
     <div
-      class="flex items-center fixed top-16 left-0 w-full h-16 bg-white z-10"
+      class="flex items-center fixed top-16 left-0 w-full h-24 bg-white z-10"
     >
-      <input
-        type="text"
-        class="fixed top-20 left-8 border border-solid px-4 py-1 rounded-md"
-        placeholder="Search"
-        v-model="search"
-        @input="filterItems"
-      />
+      <div class="flex items-center ml-8 h-full">
+        <input
+          type="text"
+          class="flex items-center border border-solid px-10 py-3 rounded-sm focus:border-blue-500"
+          placeholder="Search members"
+          v-model="search"
+          @input="filterItems"
+        />
+      </div>
 
       <button
         @click="toggleForm"
@@ -23,16 +25,15 @@
         id="myForm"
         class="border border-black bg-[#edf2f4]"
       >
-        <AddMemberForm @toggle-form="toggleForm"></AddMemberForm>
+        <AddMemberForm @form-data="handleFormData" @toggle-form="toggleForm" />
       </div>
     </div>
-    <div class="mt-32 mx-8">
+    <div class="mt-40 mx-8">
       <v-data-table
         class="overflow-hidden border border-black mb-10"
         v-model="selected"
         :items="filteredItems"
-        item-value="name"
-        show-select
+        item-value="firstname"
       ></v-data-table>
     </div>
   </div>
@@ -50,78 +51,7 @@ export default {
       showForm: false,
       selected: [],
       search: "",
-      items: [
-        {
-          name: "🍎 Apple",
-          location: "Washington",
-          height: "0.1",
-          base: "0.07",
-          volume: "0.0001",
-        },
-        {
-          name: "🍌 Banana",
-          location: "Ecuador",
-          height: "0.2",
-          base: "0.05",
-          volume: "0.0002",
-        },
-        {
-          name: "🍇 Grapes",
-          location: "Italy",
-          height: "0.02",
-          base: "0.02",
-          volume: "0.00001",
-        },
-        {
-          name: "🍉 Watermelon",
-          location: "China",
-          height: "0.4",
-          base: "0.3",
-          volume: "0.03",
-        },
-        {
-          name: "🍍 Pineapple",
-          location: "Thailand",
-          height: "0.3",
-          base: "0.2",
-          volume: "0.005",
-        },
-        {
-          name: "🍒 Cherries",
-          location: "Turkey",
-          height: "0.02",
-          base: "0.02",
-          volume: "0.00001",
-        },
-        {
-          name: "🥭 Mango",
-          location: "India",
-          height: "0.15",
-          base: "0.1",
-          volume: "0.0005",
-        },
-        {
-          name: "🍓 Strawberry",
-          location: "USA",
-          height: "0.03",
-          base: "0.03",
-          volume: "0.00002",
-        },
-        {
-          name: "🍑 Peach",
-          location: "China",
-          height: "0.09",
-          base: "0.08",
-          volume: "0.0004",
-        },
-        {
-          name: "🥝 Kiwi",
-          location: "New Zealand",
-          height: "0.05",
-          base: "0.05",
-          volume: "0.0001",
-        },
-      ],
+      items: [],
     };
   },
   computed: {
@@ -129,7 +59,7 @@ export default {
       if (this.search) {
         const searchQuery = this.search.toLowerCase();
         return this.items.filter((item) =>
-          item.name.toLowerCase().includes(searchQuery)
+          item.firstname.toLowerCase().includes(searchQuery)
         );
       } else {
         return this.items;
@@ -137,19 +67,15 @@ export default {
     },
   },
   methods: {
+    handleFormData(formData) {
+      this.items.push(formData); // Add the form data to the items array
+    },
     toggleForm() {
       this.showForm = !this.showForm;
-    },
-    addName() {
-      const newName = prompt("Enter a name");
-      if (newName) {
-        this.items.push({ name: newName });
-      }
     },
     filterItems() {
       this.selected = [];
     },
-  
   },
 };
 </script>
