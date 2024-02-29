@@ -1,6 +1,5 @@
 <template>
   <div class="mt-20 ml-5">
-    <MainNav class="" />
     <div class="grid grid-cols-3 gap-3 mr-3">
       <div class="grid gird-col-3 bg-[#f5f5f5] mt-5 rounded-md">
         <div class="flex flex-col justify-between py-4 pl-3">
@@ -68,13 +67,9 @@
 <script>
 import apexchart from "vue3-apexcharts";
 
-import MainNav from "@/components/mainNav.vue";
-import linegraph from "@/components/linegraph.vue";
-import pichart from "@/components/pichart.vue";
-
 export default {
   name: "DashboardPage",
-  components: { MainNav, apexchart, linegraph, pichart },
+  components: { apexchart },
   data() {
     return {
       chartOptions: {

@@ -8,10 +8,10 @@
         <nav class="h-full ml-8">
           <ul class="flex h-full p-0 m-0 list-none">
             <li class="h-full">
-              <router-link
-                to="/dashboard"
+              <NuxtLink
+                to="/"
                 class="flex items-center h-full py-2.5"
-                >Dashboard</router-link
+                >Dashboard</NuxtLink
               >
             </li>
             <li
@@ -19,10 +19,10 @@
               v-for="menuItem in menuItems"
               :key="menuItem.name"
             >
-              <router-link
+              <NuxtLink
                 :to="menuItem.url"
                 class="flex items-center h-full py-2.5"
-                >{{ menuItem.name }}</router-link
+                >{{ menuItem.name }}</NuxtLink
               >
             </li>
           </ul>
@@ -39,9 +39,9 @@
     </div>
   </header>
 </template>
+
 <script>
 export default {
-  name: "MainNav",
   data() {
     return {
       menuItems: [

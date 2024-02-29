@@ -1,9 +1,6 @@
 <script>
-import AddMemberForm from "@/components/addMemberForm.vue";
-
 export default {
   name: "MembersPage",
-  components: { AddMemberForm },
   data() {
     return {
       previewImage: null,
@@ -41,7 +38,6 @@ export default {
 
 <template>
   <div>
-    <MainNav />
     <div
       class="flex items-center fixed top-16 left-0 w-full h-24 bg-white z-10"
     >
