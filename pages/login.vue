@@ -13,11 +13,11 @@
       </div>
       <div class="mb-3">
         <div>
-          <label for="email">Email:</label>
+          <label for="email">Username:</label>
           <input
             type="email"
             class="w-full border border-2 rounded-sm py-1 mt-1 px-2"
-            placeholder="enter your email"
+            placeholder="enter your username or email"
           />
         </div>
         <div class="flex justify-end text-sm text-blue-700 mt-3">
@@ -26,7 +26,7 @@
         <div>
           <label for="password">Password:</label>
           <input
-            type="text"
+            type="password"
             class="w-full border border-2 rounded-sm py-1 mt-1 px-2"
             placeholder="enter your password"
           />
